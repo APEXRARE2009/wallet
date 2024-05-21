@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Dosis:wght@200..800&family=Inconsolata:wght@200..900&family=Jaro:opsz@6..72&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Wallet</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container height">
+			<div class="content height">
+				<div class="content__block">
+					<div class="content__block-purchase">
+						<div class="content__block-purchase-choice">
+							<ul class="content__block-purchase-choice-list">
+								<div class="content__block-purchase-choice-list-item">
+									<div class="content__block-purchase-choice-list-item-title">product</div>
+									<input class="content__block-purchase-choice-list-item-input input-name" placeholder="name" type="text">
+								</div>
+								<div class="content__block-purchase-choice-list-item">
+									<div class="content__block-purchase-choice-list-item-title">price</div>
+									<input class="content__block-purchase-choice-list-item-input input-price" placeholder="0" type="number">
+								</div>
+								<div class="content__block-purchase-choice-list-item">
+									<div class="content__block-purchase-choice-list-item-title">category</div>
+									<select class="content__block-purchase-choice-list-item-select">
+										<option class="content__block-purchase-choice-list-item-select-option">choose</option>
+										<option class="content__block-purchase-choice-list-item-select-option">fast food</option>
+										<option class="content__block-purchase-choice-list-item-select-option">sport</option>
+										<option class="content__block-purchase-choice-list-item-select-option">drinks</option>
+										<option class="content__block-purchase-choice-list-item-select-option">game</option>
+									</select>
+								</div>
+							</ul>
+							<button class="content__block-purchase-choice-btn">add</button>
+							<div class="content__block-purchase-choice-error"></div>
+						</div>
+						<div class="content__block-purchase-list">
+							<div class="content__block-purchase-list-title">
+								<div class="content__block-purchase-list-title-item">name</div>
+								<div class="content__block-purchase-list-title-item">category</div>
+								<div class="content__block-purchase-list-title-item">price</div>
+							</div>
+						</div>
+					</div>
+					<div class="content__block-chart">
+						<div class="content__block-chart-canvas">
+							<div class="canvas">
+							  <svg class="chart" viewBox="0 0 50 50">
+							    <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+							  </svg>
+							</div>
+						</div>
+						<div class="content__block-chart-list">
+							<div class="content__block-chart-list-legends">
+								<div class="content__block-chart-list-legends-item">
+									<div class="content__block-chart-list-legends-item-before">
+										<div class="content__block-chart-list-legends-item-color item-fast-food"></div>
+										<div class="content__block-chart-list-legends-item-name">fast food</div>
+									</div>
+									<div class="content__block-chart-list-legends-item-price">
+										<div class="content__block-chart-list-legends-item-price-number" id="fastfood">0</div>
+										<div class="content__block-chart-list-legends-item-price-sign">₽</div>
+									</div>
+								</div>
+								<div class="content__block-chart-list-legends-item">
+									<div class="content__block-chart-list-legends-item-before">
+										<div class="content__block-chart-list-legends-item-color item-sport"></div>
+										<div class="content__block-chart-list-legends-item-name">sport</div>
+									</div>
+									<div class="content__block-chart-list-legends-item-price">
+										<div class="content__block-chart-list-legends-item-price-number" id="sport">0</div>
+										<div class="content__block-chart-list-legends-item-price-sign">₽</div>
+									</div>
+								</div>
+								<div class="content__block-chart-list-legends-item">
+									<div class="content__block-chart-list-legends-item-before">
+										<div class="content__block-chart-list-legends-item-color item-drinks"></div>
+										<div class="content__block-chart-list-legends-item-name">drinks</div>
+									</div>
+									<div class="content__block-chart-list-legends-item-price">
+										<div class="content__block-chart-list-legends-item-price-number" id="drinks">0</div>
+										<div class="content__block-chart-list-legends-item-price-sign">₽</div>
+									</div>
+								</div>
+								<div class="content__block-chart-list-legends-item">
+									<div class="content__block-chart-list-legends-item-before">
+										<div class="content__block-chart-list-legends-item-color item-game"></div>
+										<div class="content__block-chart-list-legends-item-name">game</div>
+									</div>
+									<div class="content__block-chart-list-legends-item-price">
+										<div class="content__block-chart-list-legends-item-price-number" id="game">0</div>
+										<div class="content__block-chart-list-legends-item-price-sign">₽</div>
+									</div>
+								</div>
+							</div>
+							<div class="content__block-chart-list-inTotal">
+								<div class="content__block-chart-list-inTotal-before"></div>
+								<div class="content__block-chart-list-inTotal-after">₽</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
