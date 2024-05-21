@@ -12,6 +12,33 @@ let sportPrice = document.querySelector("#sport");
 let drinksPrice = document.querySelector("#drinks");
 let gamePrice = document.querySelector("#game");
 
+let blockCheckDevice = document.querySelector(".checking-device");
+let blockCheckDeviceContent = document.querySelector(".checking-device-content");
+let blockCheckDeviceBtn = document.querySelector(".checking-device-content-btn");
+let blockCheckDeviceTxt = document.querySelector(".checking-device-content-txt");
+
+let agentInfo = navigator.userAgent;
+
+if (agentInfo.includes("Android")) {
+    blockCheckDevice.style.display = "flex";
+} else if (agentInfo.includes("iPhone")) {
+    blockCheckDevice.style.display = "flex"
+}
+
+blockCheckDeviceBtn.addEventListener("click", () => {
+    setTimeout(() => {
+        blockCheckDevice.style.display = "none";
+    }, 2300);
+    setTimeout(() => {
+        blockCheckDevice.classList.add("checking-device-close")
+    }, 1200);
+    setTimeout(() => {
+        blockCheckDeviceContent.classList.add("checking-device-content-close")
+    }, 400);
+    blockCheckDeviceBtn.classList.add("checking-device-content-btn-close")
+    blockCheckDeviceTxt.classList.add("checking-device-content-txt-close")
+})
+
 btn.addEventListener("click", () => addProduct())
 
 function addProduct() {

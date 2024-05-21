@@ -653,3 +653,125 @@ input[type=number] {
   gap: 0 0.4vw;
   letter-spacing: 0.06vw;
 }
+
+.checking-device {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.checking-device-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80vw;
+  height: 90vw;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(3vw);
+          backdrop-filter: blur(3vw);
+  gap: 4vw 0;
+  padding: 4vw;
+  border-radius: 5vw;
+  -webkit-box-shadow: 0 0 3.2vw white inset;
+          box-shadow: 0 0 3.2vw white inset;
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin: 4vw 0;
+}
+
+.checking-device-content-txt {
+  font-size: 3.4vw;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.checking-device-content-btn {
+  width: 20vw;
+  height: 8vw;
+  background: transparent;
+  color: white;
+  border: 0.4vw solid black;
+  border-radius: 1vw;
+  -webkit-box-shadow: 0 0 1vw white inset;
+          box-shadow: 0 0 1vw white inset;
+  text-shadow: 0 0 1vw white;
+  -webkit-animation: 3s borderColor infinite;
+          animation: 3s borderColor infinite;
+  font-size: 3.2vw;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+@-webkit-keyframes borderColor {
+  0% {
+    border: 0.4vw solid black;
+  }
+  50% {
+    border: 0.4vw solid white;
+  }
+  100% {
+    border: 0.4vw solid black;
+  }
+}
+
+@keyframes borderColor {
+  0% {
+    border: 0.4vw solid black;
+  }
+  50% {
+    border: 0.4vw solid white;
+  }
+  100% {
+    border: 0.4vw solid black;
+  }
+}
+.checking-device-content-close {
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  opacity: 0;
+  font-size: 0;
+  color: transparent;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.checking-device-content-btn-close {
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  opacity: 0;
+  color: transparent;
+  overflow: hidden;
+}
+
+.checking-device-content-txt-close {
+  opacity: 0;
+}
+
+.checking-device-close {
+  opacity: 0;
+}

@@ -519,3 +519,101 @@ input[type=number] {
 	gap: 0 .4vw;
 	letter-spacing: .06vw;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.checking-device {
+	width: 100vw;
+	height: 100vh;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: rgba(0, 0, 0, .4);
+	position: fixed;
+	transition: 1s;
+}
+
+.checking-device-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 80vw;
+	height: 90vw;
+	background: rgba(0, 0, 0, .6);
+	backdrop-filter: blur(3vw);
+	gap: 4vw 0;
+	padding: 4vw;
+	border-radius: 5vw;
+	box-shadow: 0 0 3.2vw white inset;
+	transition: 1s;
+	margin: 4vw 0;
+}
+
+.checking-device-content-txt {
+	font-size: 3.4vw;
+	transition: .5s;
+}
+
+.checking-device-content-btn {
+	width: 20vw;
+	height: 8vw;
+	background: transparent;
+	color: white;
+	border: .4vw solid black;
+	border-radius: 1vw;
+	box-shadow: 0 0 1vw white inset;
+	text-shadow: 0 0 1vw white;
+	animation: 3s borderColor infinite;
+	font-size: 3.2vw;
+	transition: 1s;
+}
+
+@keyframes borderColor {
+	0% {
+		border: .4vw solid black;
+	}
+	50% {
+		border: .4vw solid white;
+	}
+	100% {
+		border: .4vw solid black;
+	}
+}
+
+.checking-device-content-close {
+	transform: scale(0, 0);
+	opacity: 0;
+	font-size: 0;
+	color: transparent;
+	gap: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.checking-device-content-btn-close {
+	transform: scale(0, 0);
+	opacity: 0;
+	color: transparent;
+	overflow: hidden;
+}
+
+.checking-device-content-txt-close {
+	opacity: 0;
+}
+
+.checking-device-close {
+	opacity: 0;
+}
