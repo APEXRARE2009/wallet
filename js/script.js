@@ -41,11 +41,11 @@ blockCheckDeviceBtn.addEventListener("click", () => {
 
 btn.addEventListener("click", () => addProduct())
 
-function addProduct() {
+function addProduct() { // функция при нажатии на кнопку
 	checkInputValue()
 }
 
-function getAllPrice() {
+function getAllPrice() { // итоговая цена
 	let items = Array.from(document.querySelectorAll(".content__block-purchase-list-item-block"));
 	let priceAllItems = 0;
 	items.map((item) => {
@@ -60,7 +60,7 @@ function getAllPrice() {
 
 getAllPrice()
 
-function getPriceEachLegend() {
+function getPriceEachLegend() { // цена каждогой легенды
 	let items = Array.from(document.querySelectorAll(".content__block-purchase-list-item-block"));
 	let fastFoodPriceValue = 0;
 	let sportPriceValue = 0;
@@ -88,23 +88,24 @@ function getPriceEachLegend() {
 	})
 }
 
-blockList.addEventListener("click", (event) => {
+blockList.addEventListener("click", (event) => { // удаление item
 	let itemTarget = event.target;
 	if (itemTarget.classList.contains("content__block-purchase-list-item-block")) {
 		itemTarget.remove();
 		getAllPrice();
 		getPriceEachLegend();
+		curcle();
 	}
 })
 
-function getAllValues() {
+function getAllValues() { // получить все введенные данные
 	inputNameValue = inputName.value;
 	inputPriceValue = inputPrice.value;
 	selectValue = select.value;
 	selectValueReplace = selectValue.replace(/\s/g, '');
 }
 
-function checkInputValue() {
+function checkInputValue() { // проверить на правильность введенные данные
 	if (inputName.value == "" || inputName.value == " ") {
 		error.innerHTML = "Некорректный ввод<span>!</span>";
 		error.classList.add("content__block-purchase-choice-error-true");
@@ -121,11 +122,12 @@ function checkInputValue() {
 		addItem();
 		getAllPrice();
 		getPriceEachLegend();
+		curcle();
 		autoResetInputValue();
 	}
 }
 
-function addItem() {
+function addItem() { // добавление item
 	let item = document.createElement("div");
 	item.classList.add("content__block-purchase-list-item-block");
 	item.id = selectValueReplace;
@@ -164,8 +166,58 @@ function addItem() {
 	}, 600);
 }
 
-function autoResetInputValue() {
+function autoResetInputValue() { // очистить input
 	inputName.value = "";
 	inputPrice.value = "";
 	select.value = "choose";
+}
+
+function curcle() { // диаграмма
+	let curcleItem = Array.from(document.querySelectorAll(".unit"));
+	let radiusCurcle = document.querySelector(".unit").getAttribute("r");
+	let length = 2 * 3.14 * radiusCurcle;
+	console.log(length);
+	let items = Array.from(document.querySelectorAll(".content__block-purchase-list-item-block"));
+	let fastFoodPriceValue = 0;
+	let sportPriceValue = 0;
+	let drinksPriceValue = 0;
+	let gamePriceValue = 0;
+	items.map((item) => {
+		let itemPrice = +item.children[2].children[0].innerText;
+		if (item.id == "fastfood") {
+			fastFoodPriceValue += itemPrice;
+		} else if (item.id == "sport") {
+			sportPriceValue += itemPrice;
+		} else if (item.id == "drinks") {
+			drinksPriceValue += itemPrice;
+		} else if (item.id == "game") {
+			gamePriceValue += itemPrice;
+		}
+	})
+	let priceAllItems = 0;
+	items.map((item) => {
+		let itemPrice = +item.children[2].children[0].innerText;
+		priceAllItems += itemPrice;
+	})
+	let fastFoodDifference = (fastFoodPriceValue / priceAllItems) * 100;
+	let sportDifference = (sportPriceValue / priceAllItems) * 100;
+	let drinksDifference = (drinksPriceValue / priceAllItems) * 100;
+	let gameDifference = (gamePriceValue / priceAllItems) * 100;
+	if (fastFoodPriceValue == 0) {
+		fastFoodDifference = 0
+	} if (sportPriceValue == 0) {
+		sportDifference = 0;
+	} if (drinksPriceValue == 0) {
+		drinksDifference = 0;
+	} if (gamePriceValue == 0) {
+		gameDifference = 0;
+	}
+	curcleItem[0].style.strokeDasharray = `${fastFoodDifference} 100`;
+	curcleItem[0].style.strokeDashoffset = 0;
+	curcleItem[1].style.strokeDasharray = `${sportDifference} 100`;
+	curcleItem[1].style.strokeDashoffset = -fastFoodDifference;
+	curcleItem[2].style.strokeDasharray = `${drinksDifference} 100`;
+	curcleItem[2].style.strokeDashoffset = -(fastFoodDifference + sportDifference);
+	curcleItem[3].style.strokeDasharray = `${gameDifference} 100`;
+	curcleItem[3].style.strokeDashoffset = -(fastFoodDifference + sportDifference + drinksDifference);
 }

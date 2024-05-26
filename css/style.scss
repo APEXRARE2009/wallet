@@ -165,6 +165,10 @@ select {
 	box-shadow: 0 0 .2vw white;
 }
 
+.content__block-purchase-choice-list-item-select:focus {
+	box-shadow: 0 0 .2vw white;
+}
+
 .content__block-purchase-choice-list-item-select-option {
 	background: black;
 	color: white;
@@ -413,30 +417,39 @@ input[type=number] {
 .unit {
 	fill: none;
     stroke-width: 10;
+    animation: addUnit .8s;
+    transition: .8s;
+}
+
+.unit:hover {
+	stroke-width: 11;
+	cursor: pointer;
 }
 
 .unit:nth-child(1) {
     stroke: #fc6500;
-    stroke-dasharray: 8 100;
-  	stroke-dashoffset: 0;
+    stroke-dasharray: 0 100;
 }
 
 .unit:nth-child(2) {
     stroke: #0ff5ed;
-    stroke-dasharray: 11 100;
-  	stroke-dashoffset: -8;
+    stroke-dasharray: 0 100;
 }
 
 .unit:nth-child(3) {
     stroke: #130ffe;
-    stroke-dasharray: 11 100;
-  	stroke-dashoffset: -19;
+    stroke-dasharray: 0 100;
 }
 
 .unit:nth-child(4) {
     stroke: #fc0048;
-    stroke-dasharray: 11 100;
-  	stroke-dashoffset: -30;
+    stroke-dasharray: 0 100;
+}
+
+@keyframes addUnit {
+  0% {
+    stroke-dasharray: 0 100;
+  }
 }
 
 .content__block-chart-list-legends-item {
